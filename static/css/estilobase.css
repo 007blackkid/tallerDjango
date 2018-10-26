@@ -1,0 +1,17 @@
+header{
+	background-color: black;	
+}
+
+h1{ 
+	color: white;
+}
+
+body{ 
+	background-image: linear-gradient(blue, white);
+}
+
+footer{	
+	background-color: gray;
+}
+
+

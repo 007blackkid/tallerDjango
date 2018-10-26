@@ -1,0 +1,40 @@
+{% extends 'base/index.html' %}
+{% load staticfiles %}
+
+
+{% block extracss %}
+	<link rel="stylesheet" type="text/css" href="{% static 'css/estilosproductos.css' %}">
+{% endblock %}
+
+{% block title %}
+<title>PROYECTO TIENDA - PRODUCTOS</title>
+{% endblock %}
+
+{% block header %}
+<center>	
+	<h1>PROYECTO TIENDA - PRODUCTOS</h1>
+</center>
+{% endblock %}
+
+{% block content %}
+	<br>
+	<h5>PRODUCTOS :</h5>
+	<ul>
+	{% for Producto in Producto %}
+		<li>{{Producto.prodNombre}}</li>
+	{% empty %}
+	<p>No hay productos</p>
+	{% endfor %}
+	</ul>
+
+
+
+	<!-- CONTENIDO CLASE DE HOY -->
+	<div class="container">
+		<a href="{% url 'productos:nuevoRegistroProd' %}">nuevo registro</a>
+	</div>
+{% endblock %}
+
+{% block footer %}
+PIE DE PAGINA - PRODUCTOS
+{% endblock %}

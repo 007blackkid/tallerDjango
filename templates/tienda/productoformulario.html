@@ -1,0 +1,36 @@
+{% extends 'base/index.html' %}
+{% load staticfiles %}
+
+
+{% block extracss %}
+	<link rel="stylesheet" type="text/css" href="{% static 'css/estilosproductos.css' %}">
+{% endblock %}
+
+{% block title %}
+<title>PROYECTO TIENDA - PRODUCTOS</title>
+{% endblock %}
+
+{% block header %}
+<center>	
+	<h1>PROYECTO TIENDA - PRODUCTOS</h1>
+</center>
+{% endblock %}
+
+{% block content %}	
+	<div class="contaniner">
+		<div class="row justify-content-md-center">
+			<div class="col-8">
+				<h1>Nuevo producto</h1>		
+				<form method="post">
+					{% csrf_token %}
+					{{ form.as_p }}
+					<button type="submit" class="btn-control"> GUARDAR</button>
+				</form>
+			</div>				
+		</div>		
+	</div>
+{% endblock %}
+
+{% block footer %}
+PIE DE PAGINA - PRODUCTOS
+{% endblock %}
