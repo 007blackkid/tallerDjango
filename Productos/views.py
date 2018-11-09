@@ -6,8 +6,8 @@ from Productos.forms import ProductosForm
 def index(request):
  	return render(request,'base/index.html')
 
-def plantilla(request):
-	return render(request,'base/index.html')
+# def plantilla(request):
+# 	return render(request,'base/index.html')
 
 def categorias(request):
 	contexto = {
