@@ -25,7 +25,7 @@ SECRET_KEY = 'oaek-9_4^68v7*6%hj95jg!ak#jya891h_u%@e%q-ubex*pkg8'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['roberto1995.pythonanywhere.com']
 
 
 # Application definition
@@ -77,10 +77,10 @@ WSGI_APPLICATION = 'proyTienda.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'tienda_bd',
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST': 'localhost',
+        'NAME': 'roberto1995$tienda_bd',
+        'USER': 'roberto1995',
+        'PASSWORD': '123456abcd',
+        'HOST': 'roberto1995.mysql.pythonanywhere-services.com',
         'PORT':'3306'
     }
 }
