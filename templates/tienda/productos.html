@@ -1,40 +1,65 @@
-{% extends 'base/index.html' %}
 {% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+	<script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/jquery-3.3.1.min.js' %}"></script> -->
+
+	<!-- JQUERY -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>       
+	<meta name = "viewport" content = "width = device-width, initial-scale = 1">      
+    <link rel = "stylesheet" href = "https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <!-- MATERIALIZE -->
+    <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+    <script type = "text/javascript" src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>           
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
+
+    <!-- JS Y CSS -->
+    <script type="text/javascript" src="{% static 'js/index.js' %}"></script>    
+	<link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">      
+	
+	<title>PROYECTO TIENDA - CATALOGO PRODUCTOS</title>
+</head>
+<body>
+	<head>
+		<nav class="nav-extended">
+    		<div class="nav-wrapper black">
+      			<a href="/index" class="brand-logo"><i class="large material-icons left">store</i>Proyecto TIENDA - Django</a>
+      			<ul id="nav-mobile" class="right hide-on-med-and-down">        		      
+			        <li><a href="productos"><i class="large material-icons left">videogame_asset</i>Productos</a></li>
+			        <li><a href="categorias"><i class="medium material-icons left">gamepad</i>Categorias</a></li>
+			        <li><a href="ventas"><i class="material-icons left">shopping_cart</i>Carrito</a></li>			        
+      			</ul>
+    		</div>
+  		</nav>
+	</head>
+
+	<main>	
+
+		
+		
 
 
-{% block extracss %}
-	<link rel="stylesheet" type="text/css" href="{% static 'css/estilosproductos.css' %}">
-{% endblock %}
 
-{% block title %}
-<title>PROYECTO TIENDA - PRODUCTOS</title>
-{% endblock %}
+			
 
-{% block header %}
-<center>	
-	<h1>PROYECTO TIENDA - PRODUCTOS</h1>
-</center>
-{% endblock %}
+		
 
-{% block content %}
-	<br>
-	<h5>PRODUCTOS :</h5>
-	<ul>
-	{% for Producto in Producto %}
-		<li>{{Producto.prodNombre}}</li>
-	{% empty %}
-	<p>No hay productos</p>
-	{% endfor %}
-	</ul>
+	</main>
 
-
-
-	<!-- CONTENIDO CLASE DE HOY -->
-	<div class="container">
-		<a href="{% url 'productos:nuevoRegistroProd' %}">nuevo registro</a>
-	</div>
-{% endblock %}
-
-{% block footer %}
-PIE DE PAGINA - PRODUCTOS
-{% endblock %}
+	 <footer class="page-footer white">          
+          <div class="footer-copyright">
+            <div class="container">
+            	<a class="black-text text-lighten-4 left" href="#!">©Roberto Abad Ramírez Nieves exp.24662</a>
+            	<a class="black-text text-lighten-4 right" href="#!">Taller DJANGO</a>
+            </div>
+          </div>
+      </footer>
+	
+        
+</body>
+</html>

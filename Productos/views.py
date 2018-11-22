@@ -6,42 +6,50 @@ from Productos.forms import ProductosForm
 def index(request):
  	return render(request,'base/index.html')
 
+def productos(request):
+ 	return render(request,'tienda/productos.html')
+
+
+
+
+ 	
+
 # def plantilla(request):
 # 	return render(request,'base/index.html')
 
-def categorias(request):
-	contexto = {
-		'Categoria' : Categoria.objects.all()
-	}
-	return render(request,'tienda/categorias.html',contexto)
+# def categorias(request):
+# 	contexto = {
+# 		'Categoria' : Categoria.objects.all()
+# 	}
+# 	return render(request,'tienda/categorias.html',contexto)
 
-def productos(request):
-	contexto = {
-		'Producto' : Producto.objects.all()
-	}
-	return render(request,'tienda/productos.html',contexto)
+# def productos(request):
+# 	contexto = {
+# 		'Producto' : Producto.objects.all()
+# 	}
+# 	return render(request,'tienda/productos.html',contexto)
 
 
-def nuevoRegistroProd(request):
-	if request.method == 'POST':
-		form = ProductosForm(request.POST)
-		if form.is_valid():
-			form.save()
-		return redirect('productos:listaProductos')
-	else:
-		form = ProductosForm()	
-	return render (request, 'tienda/productoformulario.html',{'form':form})
+# def nuevoRegistroProd(request):
+# 	if request.method == 'POST':
+# 		form = ProductosForm(request.POST)
+# 		if form.is_valid():
+# 			form.save()
+# 		return redirect('productos:listaProductos')
+# 	else:
+# 		form = ProductosForm()	
+# 	return render (request, 'tienda/productoformulario.html',{'form':form})
 
-def editarRegistroProd(request,idProducto):
-	Producto = Producto.objects.get(id=idProducto)
-	if(request.method == 'GET'):
-		form = ProductosForm(instance = Producto)
-	else:
-		form = ProductosForm(request.POST, instance=Producto)
-		if( form.is_valid()):
-			form.save()
-			return redirect('productos:listaProductos')
-	return render(request, 'tienda/productoformulario.html',{'form':form})
+# def editarRegistroProd(request,idProducto):
+# 	Producto = Producto.objects.get(id=idProducto)
+# 	if(request.method == 'GET'):
+# 		form = ProductosForm(instance = Producto)
+# 	else:
+# 		form = ProductosForm(request.POST, instance=Producto)
+# 		if( form.is_valid()):
+# 			form.save()
+# 			return redirect('productos:listaProductos')
+# 	return render(request, 'tienda/productoformulario.html',{'form':form})
 
 # def eliminarRegistroProd(request, prodId):
 	

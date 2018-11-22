@@ -1,0 +1,36 @@
+main{
+	flex: 1 0 auto;
+	margin: 0px;
+	background-image: url('https://www.androidguys.com/wp-content/uploads/2016/02/vzRN4in.jpg');
+	background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+body {
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;	
+}
+
+
+
+
+
+.tabs{
+height: auto;
+white-space: normal;
+}
+.tab{
+display: block;
+width: 100%;
+border-bottom: 1px solid #f0f0f0;
+}
+.tab-content{
+height: 200px;
+width: 100%;
+background: #fcfcfc;
+border:1px solid #f0f0f0;
+}
+.indicator{
+display: none;
+}

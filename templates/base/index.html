@@ -2,60 +2,143 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+	<!-- <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
-	
-	{% block title %}
-	<title>PROYECTO TIENDA - INICIO</title>
-	{% endblock %}
-	
-	{% block extracss %}
-	<link rel="stylesheet" type="text/css" href="{% static 'css/estilobase.css' %}">
-	{% endblock %}
+	<script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/jquery-3.3.1.min.js' %}"></script> -->
 
+	<!-- JQUERY -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>       
+	<meta name = "viewport" content = "width = device-width, initial-scale = 1">      
+    <link rel = "stylesheet" href = "https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <!-- MATERIALIZE -->
+    <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+    <script type = "text/javascript" src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>           
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
+
+    <!-- JS Y CSS -->
+    <script type="text/javascript" src="{% static 'js/index.js' %}"></script>    
+	<link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">      
+	
+	<title>PROYECTO TIENDA - INICIO</title>
 </head>
 <body>
-		<div class="pos-f-t">
-			  <div class="collapse" id="navbarToggleExternalContent">
-			    <div class="bg-dark p-4">
-			      <h5 class="text-white h4">Collapsed content</h5>
-			      <span class="text-muted">Toggleable via the navbar brand.</span>
+	<head>
+		<nav class="nav-extended">
+    		<div class="nav-wrapper black">
+      			<a href="/index" class="brand-logo"><i class="large material-icons left">store</i>Proyecto TIENDA - Django</a>
+      			<ul id="nav-mobile" class="right hide-on-med-and-down">        		      
+			        <li><a href="productos"><i class="large material-icons left">videogame_asset</i>Productos</a></li>
+			        <li><a href="categorias"><i class="medium material-icons left">gamepad</i>Categorias</a></li>
+			        <li><a href="ventas"><i class="material-icons left">shopping_cart</i>Carrito</a></li>			        
+      			</ul>
+    		</div>
+  		</nav>
+	</head>
+
+	<main>	
+
+		
+		<div class="row">
+			<div class="col m12">
+				<img style="padding: 2px; margin-left: 10px; margin:none;" src="{% static 'images/head.jpg' %}"/>
+			</div>
+		</div>	
+
+
+		<div class="container alignVert">
+				<div class="row center">
+
+			      <div class="col s4">
+			        <!-- Promo Content 1 goes here -->
+			        <li><a href=""><i class="large material-icons">videogame_asset</i>
+			        <div class="card-action center hoverable blue">
+							<p style="color: white;">Variedad en catalogo de videojuegos para diferentes consolas. PS4,XboxOne,Nintendo Switch, PC games.</p>
+							<a href="">VER CATALOGO DE VIDEOJUEGOS  -></a>
+					</div>
+			      </div>
+			      <div class="col s4">
+			        <!-- Promo Content 2 goes here -->
+			        <li><a href=""><i class="large material-icons">apps</i>
+			        <div class="card-action center hoverable blue">
+							<p style="color: white;">Variedad en catalogo de videojuegos para diferentes consolas. PS4,XboxOne,Nintendo Switch, PC games.</p>
+							<a href="">VER CATALOGO DE VIDEOJUEGOS  -></a>
+					</div>
+			      </div>
+			      <div class="col s4">
+			        <!-- Promo Content 3 goes here -->
+			        <li><a href=""><i class="large material-icons">attach_money</i>
+			        <div class="card-action center hoverable blue">
+							<p style="color: white;">Variedad en catalogo de videojuegos para diferentes consolas. PS4,XboxOne,Nintendo Switch, PC games.</p>
+							<a href="">VER CATALOGO DE VIDEOJUEGOS  -></a>
+					</div>
+			      </div>
+
 			    </div>
-			  </div>
-			  <nav class="navbar navbar-dark bg-dark">
-			    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-			      <span class="navbar-toggler-icon"></span>
-			    </button>
-			  </nav>
-		</div>
+			</div>
+			
+		
+
+
+		<div class="container alignVert">
+				<div class="row center">
+					<div class="col s12 m5">
+						<div class="card hoverable">
+							<div class="card-image">
+								<img style="padding: 10px; width:380px; margin:auto;" src="{% static 'images/img1.jpg' %}"/><span class="card-title"></span>
+							</div>
+							<div class="card-action center hoverable">
+								<p>Variedad de consolas de videojuegos en existencia en el catalogo de productos.</p>
+								<a href="/index/categorias">VER CATALOGO DE CONSOLAS -></a>
+							</div>
+						</div>
+					</div>
+		
+					<div class="col s12 m5">
+						<div class="card hoverable">
+							<div class="card-image">
+								<img style="padding: 10px; width:350px height: 100px; margin:auto;" src="{% static 'images/img2.jpg' %}"/><span class="card-title"></span>
+							</div>
+							<div class="card-action center hoverable">
+								<p>Variedad en catalogo de videojuegos para diferentes consolas. PS4,XboxOne,Nintendo Switch, PC games.</p>
+								<a href="">VER CATALOGO DE VIDEOJUEGOS  -></a>
+							</div>
+						</div>
+					</div> 
+
+					<div class="col s12 m4 ">
+						<div class="card hoverable">
+							<div class="card-image">
+								<img style="padding: 10px; width:350px height: 100px; margin:auto;" src="{% static 'images/img2.jpg' %}"/><span class="card-title"></span>
+							</div>
+							<div class="card-action center hoverable">
+								<p>Accesorios para tus consolas. Extras en videojuegos y mas.</p>
+								<a href="">VER CATALOGO DE PRODUCTOS  -></a>
+							</div>
+						</div>
+					</div> 
+				</div>
+			</div>
 
 
 
-	<!-- ENCABEZADO -->
-	<header>			
-			{% block header %}		
-			<h1>Proyecto tienda</h1>
-			{% endblock %}		
-	</header>
+			
 
-	<!-- CONTENIDO -->
-	<div id="contenido">
-		<hr>
-		{% block content %}
+		
 
-		{% endblock %}
-		<hr>
-	</div>
+	</main>
 
-	<!-- PIE DE PAGINA -->
-	<footer>		
-		<center>
-			<p>
-				{% block footer %}
-				PIE DE PAGINA - INICIO
-				{% endblock %}
-			</p>
-		</center>		
-	</footer>
+	 <footer class="page-footer white">          
+          <div class="footer-copyright">
+            <div class="container">
+            	<a class="black-text text-lighten-4 left" href="#!">©Roberto Abad Ramírez Nieves exp.24662</a>
+            	<a class="black-text text-lighten-4 right" href="#!">Taller DJANGO</a>
+            </div>
+          </div>
+      </footer>
+	
+        
 </body>
 </html>
