@@ -45,7 +45,32 @@
   		</nav>
 	</head>
 
-	<main class="consolasmain">		
+	<main>		
+
+		<table>
+			<thead>
+				
+			</thead>
+			<tbody>
+			{% if consolas_list %}
+			{% for Producto in consolas_list %}
+			<tr>
+				<td><i class="material-icons left">videogame_asset</i></td>
+				<td>{{ Producto.prodNombre }}</td>
+				<td>{{ Producto.prodDescripcion }}</td>			
+				<td>{{ Producto.prodPrecio }}</td>
+				<td>{{ Producto.prodDisponible }}</td>
+				<td>COMPRAR</td>
+			</tr>
+			{% endfor %}
+
+			{% else %}
+			<h1>NO SE ENCONTRARON REGISTROS</h1>
+			{% endif %}
+			</tbody>
+		</table>
+
+	{% endblock %}
 
 	</main>
 

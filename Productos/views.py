@@ -6,8 +6,11 @@ from Productos.forms import ProductosForm
 def index(request):
  	return render(request,'base/index.html')
 
-def consolas(request):
- 	return render(request,'tienda/consolas.html')
+def consolas(request):	
+	# consolas_list = Producto.objects.get(prodCatId=1)
+	consolas_list = Producto.objects.all()
+	contexto = {'consolas_list':consolas_list}
+	return render(request,'tienda/consolas.html', contexto)
 
 def juegos(request):
  	return render(request,'tienda/juegos.html')
@@ -17,6 +20,8 @@ def accesorios(request):
 
 def ventas(request):
  	return render(request,'tienda/ventas.html')
+
+
 
 
 
