@@ -22,7 +22,7 @@
     <script type="text/javascript" src="{% static 'js/index.js' %}"></script>    
 	<link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">      
 	
-	<title>PROYECTO TIENDA - INICIO</title>
+	<title>PROYECTO TIENDA</title>
 </head>
 <body>
 	<head>
@@ -34,11 +34,11 @@
 		</div>	
 		<nav class="nav-extended">
     		<div class="nav-wrapper black">
-      			<a href="/index" class="brand-logo"><i class="large material-icons left">store</i>Proyecto TIENDA - Django</a>
+      			<a href="/index" class="brand-logo"><i class="large material-icons left">store</i>Productos</a>
       			<ul id="nav-mobile" class="right hide-on-med-and-down">        		      
-			        <li><a href="consolas"><i class="large material-icons left">videogame_asset</i>Consolas</a></li>
-			        <li><a href="juegos"><i class="large material-icons left">gamepad</i>Video juegos</a></li>
-			        <li><a href="accesorios"><i class="medium material-icons left">local_activity</i>Accesorios</a></li>
+			        <li><a href="productos"><i class="large material-icons left">videogame_asset</i>Consolas</a></li>
+			        <li><a href="productos"><i class="large material-icons left">videogame_asset</i>Videojuegos</a></li>
+			        <li><a href="categorias"><i class="medium material-icons left">gamepad</i>Accesorios</a></li>
 			        <li><a href="ventas"><i class="material-icons left">shopping_cart</i>Carrito</a></li>			        
       			</ul>
     		</div>
@@ -55,24 +55,24 @@
 				<div class="row center">
 
 			      <div class="col s4">			        
-			        <li><a href="consolas"><i class="large material-icons">videogame_asset</i>
+			        <li><a href="productos"><i class="large material-icons">videogame_asset</i>
 			        <div class="card-action center hoverable blue">
-							<p style="color: white;">Tenemos las consolas mas nuevas de videojuegos para ti desde PS4,XboxOne,Nintendo Switch y más!.</p>
-							<a style="color: white;" href="consolas">     ¡VE AHORA!  -></a>
+							<p style="color: white;">Tenemos las mas nuevas consolas de videojuegos para ti desde PS4,XboxOne,Nintendo Switch y más!.</p>
+							<a style="color: white;" href="productos">     ¡VE AHORA!  -></a>
 					</div>
 			      </div>
 			      <div class="col s4">			        
-			        <li><a href="juegos"><i class="large material-icons">apps</i>
+			        <li><a href="categorias"><i class="large material-icons">apps</i>
 			        <div class="card-action center hoverable blue">
-							<p style="color: white;">Mira nuestro catalogo de juegos con lo mas nuevo, ediciones especiales y preventas. Disponibles para todas las consolas.</p>
-							<a style="color: white;" href="juegos">    IR AL CATALOGO  -></a>
+							<p style="color: white;">Mira nuestro catalogo de juegos de todas las categorias con lo mas nuevo, ediciones especiales y preventas. Disponibles para todas las consolas.</p>
+							<a style="color: white;" href="categorias">    IR AL CATALOGO  -></a>
 					</div>
 			      </div>
 			      <div class="col s4">			        
-			        <li><a href="accesorios"><i class="large material-icons">attach_money</i>
+			        <li><a href="ventas"><i class="large material-icons">attach_money</i>
 			        <div class="card-action center hoverable blue">
-							<p style="color: white;">Accesorios, extras, widgets y mas para tu consola y videojuegos favoritos. Disponibilidad para todas las consolas.</p>
-							<a style="color: white;" href="accesorios">     COMPRAR AHORA!  -></a>
+							<p style="color: white;">Juegos, preventas y Consolas de estreno a precios especiales. Disponibilidad para todas las consolas.</p>
+							<a style="color: white;" href="ventas">     COMPRAR AHORA!  -></a>
 					</div>
 			    </div>
 		    </div>
@@ -90,8 +90,9 @@
 							</div>
 							<div class="card-action center hoverable">
 								<p>Variedad de consolas de videojuegos en existencia en el catalogo de productos.</p>
-								<a href="consolas">VER CATALOGO DE CONSOLAS -></a>
+								<a href="productos">VER CATALOGO DE CONSOLAS -></a>
 							</div>
+	
 						</div>
 					</div>
 		
@@ -102,7 +103,7 @@
 							</div>
 							<div class="card-action center hoverable">
 								<p>Variedad en catalogo de videojuegos para diferentes consolas. PS4,XboxOne,Nintendo Switch, PC games.</p>
-								<a href="juegos">VER CATALOGO DE VIDEOJUEGOS  -></a>
+								<a href="categorias">VER CATALOGO DE VIDEOJUEGOS  -></a>
 							</div>
 						</div>
 					</div> 
@@ -120,12 +121,35 @@
 								</div>
 								<div class="card-action center hoverable">
 									<p>Accesorios para tus consolas. Extras en videojuegos y mas.</p>
-									<a href="accesorios">VER CATALOGO DE PRODUCTOS  -></a>
+									<a href="productos">VER CATALOGO DE PRODUCTOS  -></a>
 								</div>
 							</div>					
 				</div>
 			</div>
 		</div>
+		
+
+
+
+			
+
+		
+
+	</main>
+
+	 <footer class="page-footer white">          
+          <div class="footer-copyright">
+            <div class="container">
+            	<a class="black-text text-lighten-4 left" href="#!">©Roberto Abad Ramírez Nieves exp.24662</a>
+            	<a class="black-text text-lighten-4 right" href="#!">Taller DJANGO</a>
+            </div>
+          </div>
+      </footer>
+	
+        
+</body>
+</html>
+
 		
 
 

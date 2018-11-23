@@ -6,9 +6,17 @@ from Productos.forms import ProductosForm
 def index(request):
  	return render(request,'base/index.html')
 
-def productos(request):
- 	return render(request,'tienda/productos.html')
+def consolas(request):
+ 	return render(request,'tienda/consolas.html')
 
+def juegos(request):
+ 	return render(request,'tienda/juegos.html')
+
+def accesorios(request):
+ 	return render(request,'tienda/accesorios.html')
+
+def ventas(request):
+ 	return render(request,'tienda/ventas.html')
 
 
 
