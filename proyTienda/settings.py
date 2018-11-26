@@ -76,26 +76,26 @@ WSGI_APPLICATION = 'proyTienda.wsgi.application'
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'tienda_bd',
-        'USER': 'postgres',
-        'PASSWORD': '123456',
-        'HOST': 'localhost',
-        'PORT':'5432'
-    }
-}
 # DATABASES = {
-#      # 'default': {
-#      #     'ENGINE': 'django.db.backends.mysql',
-#      #     'NAME': 'roberto1995$tienda_bd',
-#      #     'USER': 'roberto1995',
-#      #     'PASSWORD': '123456abcd',
-#      #     'HOST': 'roberto1995.mysql.pythonanywhere-services.com',
-#      #     'PORT':'3306'
-#      # }
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'tienda_bd',
+#         'USER': 'postgres',
+#         'PASSWORD': '123456',
+#         'HOST': 'localhost',
+#         'PORT':'5432'
+#     }
 # }
+DATABASES = {
+     # 'default': {
+     #     'ENGINE': 'django.db.backends.mysql',
+     #     'NAME': 'roberto1995$tienda_bd',
+     #     'USER': 'roberto1995',
+     #     'PASSWORD': '123456abcd',
+     #     'HOST': 'roberto1995.mysql.pythonanywhere-services.com',
+     #     'PORT':'3306'
+     # }
+}
 
 
 # Password validation
