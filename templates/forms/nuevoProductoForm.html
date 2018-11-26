@@ -1,0 +1,18 @@
+{% extends 'tienda/productos.html' %} 
+
+
+
+{% block content %}
+
+		    <div class="container">
+		      <div class="header">
+		        <h5 class="modal-title"><i class="large material-icons left">videogame_asset</i>Nuevo Producto</h5>		       
+		      </div>
+		      <div class="modal-body">		      	
+				<form method="POST">
+					{% csrf_token %}
+					{{ form.as_p}}  
+					<button class="waves-effect waves-light btn-small blue" type="submit"><i class="material-icons left">save</i>GUARDAR</button>
+				</form>
+			</div>
+{% endblock %}

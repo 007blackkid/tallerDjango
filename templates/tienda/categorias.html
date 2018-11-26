@@ -1,0 +1,95 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+<head>
+
+	<!-- JQUERY -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>       
+	<meta name = "viewport" content = "width = device-width, initial-scale = 1">      
+    <link rel = "stylesheet" href = "https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <!-- MATERIALIZE -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/materialize.css' %}">      	   
+    <link rel="stylesheet" type="text/css" href="{% static 'css/materialize.min.css' %}">      	   
+    <script type="text/javascript" src="{% static 'js/materialize.js' %}"></script>   
+    <script type="text/javascript" src="{% static 'js/materialize.min.js' %}"></script>   
+
+    <!-- JS Y CSS -->
+    <script type="text/javascript" src="{% static 'js/productos.js' %}"></script>    
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">      	   
+	
+	<title>TIENDA - CATEGORIAS</title>
+</head>
+<body>
+	<head>
+
+		<div class="row">
+			<div class="col s12" style="background-color: black;">
+				<img style="margin:none; height: 280px; width: 100%;" src="{% static 'images/head2.jpg' %}"/>
+			</div>
+		</div>	
+		<nav class="nav-extended">
+    		<div class="nav-wrapper yellow">
+      			<a href="/index" class="brand-logo"><i class="large material-icons left">store</i>TIENDA - CATEGORIAS</a>
+      			<ul id="nav-mobile" class="right hide-on-med-and-down">        				      				      
+			        <li><a class="modal-trigger" href="categorias/categorias_view"><i class="large material-icons left">add</i>Nueva Categoria</a></li>			 
+			        <li><a href="productos"><i class="large material-icons left">videogame_asset</i>Productos</a></li>
+			        <li><a href="ventas"><i class="material-icons left">shopping_cart</i>Carrito</a></li>			        
+      			</ul>
+    		</div>
+  		</nav>
+	</head>
+
+	<main>
+
+	<div class="container" style="background-color: White; margin-top: 50px; margin-bottom: 25px;">
+	{% block content %}	
+
+		
+	{% if categorias_list %}
+		<table class="highlight centered" >
+			<thead>
+				<th>Id</th>
+				<th>Nombre </th>
+				<th>Fecha de creacion</th>				
+				<TH>Acciones</TH>
+			</thead>
+			<tbody>
+			
+			{% for Categoria in categorias_list %}
+			<tr>
+				<td><i class="small material-icons left">bookmark</i> {{ Categoria.id_Cat }}</td>
+				<td>{{ Categoria.catNombre }}</td>
+				<td>{{ Categoria.fecha_creacion }}</td>	
+				<td>
+					<a class="waves-effect waves-light btn-small red modal-trigger" href="{% url 'productos:categoria_eliminar' Categoria.id_Cat %}"><i class="material-icons ">clear</i></a>
+					<a class="waves-effect waves-light btn-small green" href="{% url 'productos:categoria_editar' Categoria.id_Cat %}" id="btnEditar"><i class="material-icons ">edit</i></a>
+				</td>				
+			</tr>
+			{% endfor %}
+
+			{% else %}
+
+			<p>NO SE ENCONTRARON REGISTROS DE CATEGORIAS</h3>
+			{% endif %}
+			</tbody>
+		</table>
+
+	{% endblock %}
+
+		</div>
+	</main>
+
+	 <footer class="page-footer white">          
+          <div class="footer-copyright">
+            <div class="container">
+            	<a class="black-text text-lighten-4 left" href="#!">©Roberto Abad Ramírez Nieves exp.24662      TIENDA - CATEGORIAS</a>
+            	<a class="black-text text-lighten-4 right" href="#!">Taller DJANGO</a>
+            </div>
+          </div>
+      </footer>    
+	
+        
+</body>
+</html>

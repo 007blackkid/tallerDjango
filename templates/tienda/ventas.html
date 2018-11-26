@@ -1,0 +1,117 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+<head>
+
+	<!-- JQUERY -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>       
+	<meta name = "viewport" content = "width = device-width, initial-scale = 1">      
+    <link rel = "stylesheet" href = "https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <!-- MATERIALIZE -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/materialize.css' %}">      	   
+    <link rel="stylesheet" type="text/css" href="{% static 'css/materialize.min.css' %}">      	   
+    <script type="text/javascript" src="{% static 'js/materialize.js' %}"></script>   
+    <script type="text/javascript" src="{% static 'js/materialize.min.js' %}"></script>   
+
+    <!-- JS Y CSS -->
+    <script type="text/javascript" src="{% static 'js/ventas.js' %}"></script>    
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">      	   
+	
+	<title>TIENDA - VENTAS</title>
+</head>
+<body>
+	<head>
+
+		<div class="row">
+			<div class="col s12" style="background-color: black;">
+				<img style="margin:none; height: 280px; width: 100%;" src="{% static 'images/head3.jpg' %}"/>
+			</div>
+		</div>	
+		<nav class="nav-extended" style="margin-top: -30px;">
+    		<div class="nav-wrapper blue">
+      			<a href="/index" class="brand-logo"><i class="large material-icons left">store</i>TIENDA - VENTAS</a>
+      			<ul id="nav-mobile" class="right hide-on-med-and-down">        				      				      			        		 
+			         <li><a href="productos"><i class="large material-icons left">videogame_asset</i>Productos</a></li>
+			        <li><a href="categorias"><i class="large material-icons left">bookmark</i>Categorias</a></li>		        
+      			</ul>
+    		</div>
+  		</nav>
+	</head>
+
+	<main>
+
+		<div class="container" style="background-color: White; margin-top: 50px; margin-bottom: 25px;">
+			{% block content %}	
+
+		
+	{% if ventas_list %}
+		<table class="highlight centered" id="ventasTable">
+			<thead>
+				<th>Id</th>
+				<th>Articulo </th>
+				<th>Precio</th>
+				<th>Fecha de compra</th>	
+				<th>Acciones</th>
+			</thead>
+			<tbody>
+			
+			{% for Venta in ventas_list %}
+			<tr>
+				<td><i class="material-icons">add_shopping_cart</i>{{ Venta.idVenta }}</td>
+				<td>{{ Venta.Nombre }}</td>
+				<td>{{ Venta.Precio }}</td>
+				<td>{{ Venta.fecha_creacion }}</td>
+				<td><a class="waves-effect waves-light btn-small red modal-trigger" href=""><i class="large material-icons ">remove_shopping_cart</i>  Remover del carrito</a></td>					
+			</tr>
+			{% endfor %}
+
+			{% else %}
+			<div class="container centered"><h3 align="center">Aun no agregas nada al carrito de compras</h3></div>
+			{% endif %}
+			</tbody>
+		</table>
+
+	{% endblock %}
+
+		</div>
+
+		<div class="container" style="background-color: white; width: 40%;">
+			<div class="col s6">
+		    <h4 class="header">TOTAL DE VENTA</h4>
+		    <div class="card horizontal">
+		      <div class="card-image">
+		        <img src="https://www.gannett-cdn.com/media/2018/05/22/USATODAY/USATODAY/636625869344927495-iStock-133425591.jpg?quality=10" style="width: 260px; height: 220px;">
+		      </div>
+		      <div class="card-stacked">
+		        <div class="card-content">
+		          <UL>
+		          	<li>Total de articulos: </li>
+		          	<h4 id="articulos">0</h4>
+		          	<li>Total a pagar: </li>
+		          	<h4 id="total">0</h4>
+		          </UL>
+		        </div>
+		        <div class="card-action">
+		          
+		        </div>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		
+	</main>
+
+	 <footer class="page-footer white">          
+          <div class="footer-copyright">
+            <div class="container">
+            	<a class="black-text text-lighten-4 left" href="#!">©Roberto Abad Ramírez Nieves exp.24662      TIENDA - CATEGORIAS</a>
+            	<a class="black-text text-lighten-4 right" href="#!">Taller DJANGO</a>
+            </div>
+          </div>
+      </footer>    
+	
+        
+</body>
+</html>

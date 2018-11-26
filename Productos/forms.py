@@ -1,33 +1,48 @@
 from django import forms
-from Productos.models import Producto
+from Productos.models import Producto,Categoria
 
-class ProductosForm(forms.ModelForm):
 
-	class Meta:
+class addProductosForm(forms.ModelForm):
+
+	
+	class Meta:		
 		model = Producto
 		fields =[
-				'prodNombre',
-				'prodDescripcion',
-				'prodPrecio',
-				'prodDisponible',
-				'prodExistencias',
-				'prodCatId',
+				'Nombre',
+				'Descripcion',
+				'Precio',				
+				'Existencias',
+				'CatId',
 		]
 
 		labels = {
-				'prodNombre' : 'Nombre',
-				'prodDescripcion': 'Descripcion',
-				'prodPrecio' : 'Precio',
-				'prodDisponible': 'Disponible',
-				'prodExistencias' :  'Existencias',
-				'prodCatId': 'Categoria',
+			'Nombre': 'Nombre',
+			'Descripcion': 'Descripcion',
+			'Precio' : 'Precio',				
+			'Existencias' : 'Existencias',
+			'CatId' : 'Categoria',
 		}
 
 		widgets = {
-		'prodNombre' : forms.TextInput(attrs={}),
-		'prodDescripcion' : forms.TextInput(),
-		'prodPrecio' : forms.TextInput(),
-		'prodDisponible': forms.TextInput(),
-		'prodExistencias' : forms.TextInput(),
-		'prodCatId' : forms.TextInput(),
+			'Nombre': forms.TextInput(),
+			'Descripcion': forms.TextInput(),
+			'Precio' : forms.TextInput(),				
+			'Existencias' : forms.TextInput(),
+			'CatId' : forms.Select(),
+		}
+
+class addCategoriasForm(forms.ModelForm):
+	class Meta:
+		model = Categoria
+		fields =[
+			'catNombre',
+		]
+
+		labels = {
+			'catNombre': 'Nombre',
+		}
+
+
+		widgets = {
+			'catNombre': forms.TextInput(),
 		}
