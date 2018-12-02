@@ -1,0 +1,14 @@
+{% extends 'tienda/ventas.html' %} 
+
+
+
+{% block content %}
+
+<form method="POST">
+	{% csrf_token %}
+	<h3>¿Desea eliminar {{ venta.Nombre }} de tu carrito de compras?</h3>
+	
+	<button class="waves-effect waves-light btn-small red" type="submit">Si, eliminar</button>
+	<a class="waves-effect waves-light btn-small blue" href="{% url 'productos:listaCategorias' %}">Cancelar</a>
+</form>
+{% endblock %}

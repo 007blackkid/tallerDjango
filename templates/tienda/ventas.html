@@ -48,7 +48,8 @@
 		
 	{% if ventas_list %}
 		<table class="highlight centered" id="ventasTable">
-			<thead>
+			<thead>		
+				<th></th>		
 				<th>Id</th>
 				<th>Articulo </th>
 				<th>Precio</th>
@@ -59,23 +60,23 @@
 			
 			{% for Venta in ventas_list %}
 			<tr>
-				<td><i class="material-icons">add_shopping_cart</i>{{ Venta.idVenta }}</td>
+				<td><i class="material-icons">add_shopping_cart</i></td>
+				<td>{{ Venta.id_Venta }}</td>
 				<td>{{ Venta.Nombre }}</td>
 				<td>{{ Venta.Precio }}</td>
 				<td>{{ Venta.fecha_creacion }}</td>
-				<td><a class="waves-effect waves-light btn-small red modal-trigger" href=""><i class="large material-icons ">remove_shopping_cart</i>  Remover del carrito</a></td>					
+				<td><a class="waves-effect waves-light btn-small red modal-trigger" href="{% url 'productos:delCarrito' Venta.id_Venta %}"><i class="large material-icons ">remove_shopping_cart</i>Remover del carrito</a></td>					
 			</tr>
 			{% endfor %}
 
 			{% else %}
-			<div class="container centered"><h3 align="center">Aun no agregas nada al carrito de compras</h3></div>
+			<div class="container centered"><h3 align="center">Aun no agregas nada a tu carrito de compras</h3></div>
 			{% endif %}
 			</tbody>
 		</table>
 
-	{% endblock %}
 
-		</div>
+			</div>
 
 		<div class="container" style="background-color: white; width: 40%;">
 			<div class="col s6">
@@ -94,19 +95,23 @@
 		          </UL>
 		        </div>
 		        <div class="card-action">
-		          
+		          <a class="waves-effect waves-light btn-large green" href="ventas/pagarTODO"><i class="large material-icons ">money</i>PAGAR COMPRA</a>
 		        </div>
 		      </div>
 		    </div>
 		  </div>
 		</div>
+
+	{% endblock %}
+
+	
 		
 	</main>
 
 	 <footer class="page-footer white">          
           <div class="footer-copyright">
             <div class="container">
-            	<a class="black-text text-lighten-4 left" href="#!">©Roberto Abad Ramírez Nieves exp.24662      TIENDA - CATEGORIAS</a>
+            	<a class="black-text text-lighten-4 left" href="#!">©Roberto Abad Ramírez Nieves exp.24662      TIENDA - VENTAS</a>
             	<a class="black-text text-lighten-4 right" href="#!">Taller DJANGO</a>
             </div>
           </div>

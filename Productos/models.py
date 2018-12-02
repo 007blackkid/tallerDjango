@@ -23,7 +23,7 @@ class Producto(models.Model):
 
 class Venta(models.Model):
 	id_Venta = models.AutoField(primary_key=True)
-	Nombre = models.ForeignKey(Producto,default = '1',on_delete = models.CASCADE)
+	Nombre = models.CharField(max_length=30)
 	Precio = models.DecimalField(max_digits=8,decimal_places=2,default = 0)	
 	fecha_creacion = models.DateTimeField(auto_now_add=True)
 	

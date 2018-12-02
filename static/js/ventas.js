@@ -16,7 +16,7 @@ function CalcularTotal() {
     articulos =0;   
     filas.forEach(function(e) {         
         var columnas=e.querySelectorAll("td");        
-        var cantidad=parseFloat(columnas[2].textContent); 
+        var cantidad=parseFloat(columnas[3].textContent); 
 
         articulos++;
         total+=cantidad;

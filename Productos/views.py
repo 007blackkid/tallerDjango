@@ -85,3 +85,25 @@ def categoria_delete(request, id_Cat):
 		objetoCat.delete()
 		return redirect('/index/categorias')
 	return render(request, 'forms/categoria_delete.html',{'categoria':objetoCat})
+
+
+	# VENTAS -----------------------------------
+
+def alCarrito(request, id_Prod):
+	Compra = Producto.objects.get(id_Prod = id_Prod)
+	Compra.Existencias = (Compra.Existencias - 1)
+	Compra.save()
+	Venta.objects.create(Nombre = Compra.Nombre, Precio = Compra.Precio)
+	# 	Venta.create(Nombe = producto , Precio = precio)
+	return redirect('productos:listaProductos')
+
+def deleteCarrito(request, id_Venta):
+	objetoVenta = Venta.objects.get(id_Venta = id_Venta)
+	if request.method == 'POST':
+		objetoVenta.delete()
+		return redirect('/index/ventas')
+	return render(request, 'forms/venta_delete.html',{'venta':objetoVenta})
+	
+def pagarTODO(request):
+	Venta.objects.all().delete()
+	return redirect('/index/ventas')

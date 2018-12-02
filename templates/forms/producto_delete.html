@@ -6,7 +6,7 @@
 
 <form method="POST">
 	{% csrf_token %}
-	<h3>¿Desea eliminar el registro de {{ producto.Nombre }} </h3>
+	<h3>¿Desea eliminar el producto {{ producto.Nombre }} ?</h3>
 	
 	<button type="submit" class="waves-effect waves-light btn-small red" type="submit"><i class="material-icons left">clear</i>Si, eliminar</button>
 	<a  href="{% url 'productos:listaProductos' %}" class="waves-effect waves-light btn-small red" type="submit"><i class="material-icons left">save</i>Cancelar</a>

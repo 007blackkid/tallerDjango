@@ -6,9 +6,9 @@
 
 <form method="POST">
 	{% csrf_token %}
-	<h3>¿Desea eliminar el registro de {{ categoria.catNombre }} </h3>
+	<h3>¿Desea eliminar la categoria {{ categoria.catNombre }} ?</h3>
 	
 	<button class="waves-effect waves-light btn-small red" type="submit">Si, eliminar</button>
-	<a class="waves-effect waves-light btn-small blue" href="{% url 'productos:listaCategorias' %}">Cancelar</a>
+	<a class="waves-effect waves-light btn-small blue" href="{% url 'productos:listaVentas' %}">Cancelar</a>
 </form>
 {% endblock %}
